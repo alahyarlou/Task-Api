@@ -44,6 +44,7 @@ npm install
 ```
 
 ### 3. Environment variables
+
 Create a `.env` file in the project root:
 
 ```bash
@@ -78,6 +79,7 @@ npm run dev
 You can test the API using Postman or Insomnia.
 
 Example request to create a task:
+
 ```http
 POST http://localhost:5000/api/tasks
 Content-Type: application/json
@@ -95,10 +97,10 @@ Content-Type: application/json
 
 - Unit and integration tests (Jest + Supertest)
 
-- Dockerize the project
-
 - CI/CD pipeline setup
 
 ---
+
 ### 👨‍💻 Author
+
 - Ali Alahyarlou - <a href="https://github.com/alahyarlou">GitHub</a>
