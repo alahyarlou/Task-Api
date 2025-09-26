@@ -12,6 +12,7 @@ This project demonstrates fundamental backend concepts such as CRUD operations, 
 - Modular architecture (Models, Controllers, Routes, Middlewares)
 - MongoDB integration with **Mongoose**
 - Standardized error handling and responses
+- **Dockerized** (Node.js + MongoDB with Docker Compose)
 
 ---
 
@@ -25,6 +26,9 @@ This project demonstrates fundamental backend concepts such as CRUD operations, 
 │ ├── middlewares/ \
 │ └── app.js \
 │── .gitignore\
+│── Dockerfile\
+│── docker-compose.yml\
+│── .dockerignore\
 │── package.json\
 │── README.md
 
@@ -52,12 +56,39 @@ MONGO_URI=mongodb://localhost:27017/todo-api
 PORT=5000
 ```
 
-### 4. Run the server
+### 4. Run the server (you need MongoDB installed locally)
 
 ```bash
 npm run dev
 ```
 
+---
+## ▶️ Option 2: Run with Docker 🐳 (recommended)
+
+### 1. Make sure you have Docker & Docker Compose installed
+- <a href="https://docs.docker.com/get-started/get-docker/"> Install Docker </a>
+- <a href="https://docs.docker.com/compose/install/"> Install Docker Compose </a>
+
+### 2. Configure environment variables
+Update `.env` file like this:
+
+```env
+MONGO_URI=mongodb://mongo:27017/todo-api
+PORT=5000
+```
+
+### 3. Build and start containers
+```bash 
+docker-compose up --build
+```
+
+### 4. Access the API
+The server will be running at:
+```bash
+http://localhost:5000/api/tasks
+```
+
+MongoDB will be running inside its own container `(mongo)` and data will be persisted with Docker volumes.
 ---
 
 ## 🌐 API Endpoints
